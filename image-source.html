@@ -1,172 +1,257 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <title>The World Today — 17 November 2026</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #fdfbf3; }
-  .page { width: 1024px; height: 1024px; padding: 12px 16px 10px; font-family: Arial, Helvetica, sans-serif; color: #111; overflow: hidden; background: #fdfbf3; }
-  /* ---------- masthead ---------- */
-  .mast { text-align: center; border-bottom: 4px double #111; padding-bottom: 4px; }
-  .mast h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 42px; line-height: 1; letter-spacing: 2px; }
-  .dateline { display: flex; justify-content: space-between; align-items: baseline; margin-top: 3px; }
-  .dateline .date { color: #b91c1c; font-weight: bold; font-size: 19px; letter-spacing: 1px; }
-  .dateline .tag { font-size: 11px; letter-spacing: 1px; color: #444; }
-  /* ---------- lead ---------- */
-  .lead { margin-top: 7px; border: 2px solid #b91c1c; background: #fdeceb; padding: 7px 12px 6px; }
-  .kicker { color: #b91c1c; font-weight: bold; font-size: 13px; letter-spacing: 2px; }
-  .lead h2 { font-family: Georgia, serif; font-size: 27px; line-height: 1.12; margin: 3px 0 4px; }
-  .lead p { font-size: 12px; line-height: 1.35; }
-  .chips { margin-top: 5px; font-size: 11px; font-weight: bold; color: #7f1d1d; }
-  .chips span { background: #fff; border: 1px solid #b91c1c; padding: 1px 6px; margin-right: 6px; }
-  /* ---------- rows ---------- */
-  .row { display: flex; gap: 10px; margin-top: 7px; }
-  .box { border: 1.5px solid #111; padding: 6px 10px 5px; background: #fff; }
-  .box h3 { font-family: Georgia, serif; font-size: 16px; line-height: 1.15; }
-  .box p { font-size: 11px; line-height: 1.3; margin-top: 3px; }
-  .box .k { font-size: 10px; font-weight: bold; letter-spacing: 1.5px; color: #b91c1c; }
-  .half { flex: 1; }
-  .third { flex: 1; }
-  .third h3 { font-size: 14.5px; }
-  .third p { font-size: 10px; }
-  /* ---------- map strip ---------- */
-  .map { margin-top: 7px; border: 1.5px solid #111; background: #eef4f8; padding: 3px 10px 1px; }
-  .map .t { font-size: 10px; font-weight: bold; letter-spacing: 2px; color: #333; }
-  .map svg { display: block; width: 100%; height: 46px; }
-  /* ---------- continent grid ---------- */
-  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-top: 7px; }
-  .sec { border: 1.5px solid #111; background: #fff; }
-  .sec h4 { background: #111; color: #fff; font-size: 11px; letter-spacing: 2px; padding: 2px 8px; }
-  .sec h4 em { font-style: normal; color: #fbbf24; }
-  .item { padding: 3px 8px 2px; border-bottom: 1px solid #ddd; }
-  .item:last-child { border-bottom: none; }
-  .item b { font-size: 10.5px; line-height: 1.15; display: block; }
-  .item span { font-size: 9px; line-height: 1.2; color: #333; display: block; }
-  /* ---------- footer ---------- */
-  .foot { margin-top: 8px; border-top: 2px solid #111; padding-top: 4px; font-size: 10px; color: #444; text-align: center; line-height: 1.4; }
-  .foot b { color: #111; }
-</style></head>
-<body><div class="page">
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #fdfcf6; color: #111;
+    padding: 12px 14px 10px 14px;
+  }
+  .page { width: 996px; height: 1002px; display: flex; flex-direction: column; }
 
-  <div class="mast">
+  /* ---------- masthead ---------- */
+  .masthead { text-align: center; border-bottom: 3px double #111; padding-bottom: 5px; }
+  .masthead h1 { font-size: 43px; letter-spacing: 2px; line-height: 1; font-weight: 900; }
+  .dateline { display: flex; justify-content: space-between; margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif; font-size: 10.5px; letter-spacing: 1.5px; color: #333; }
+  .dateline .date { color: #b91c1c; font-weight: 700; }
+
+  /* ---------- generic boxes ---------- */
+  .row { display: flex; gap: 8px; }
+  .box { border: 1.5px solid #111; padding: 7px 9px; background: #fff; }
+  .kicker { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; color: #b91c1c; text-transform: uppercase; }
+  .box h2 { font-size: 15px; line-height: 1.18; margin: 2px 0 3px 0; font-weight: 900; }
+  .box p { font-size: 11.5px; line-height: 1.32; color: #222; }
+
+  /* ---------- lead ---------- */
+  .lead { border: 2.5px solid #b91c1c; padding: 8px 11px 7px 11px; margin-top: 7px; background: #fff; }
+  .lead .kicker { font-size: 11px; }
+  .lead h2 { font-size: 31px; line-height: 1.12; margin: 3px 0 4px 0; }
+  .lead p { font-size: 12.5px; line-height: 1.35; color: #222; }
+  .chips { margin-top: 6px; display: flex; gap: 6px; }
+  .chip { font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 700;
+    letter-spacing: 1px; border: 1.2px solid #b91c1c; color: #b91c1c; padding: 2px 6px; }
+
+  .row2 { margin-top: 7px; }
+  .row2 .box { flex: 1; }
+  .row2 h2 { font-size: 16px; }
+  .row3 { margin-top: 7px; }
+  .row3 .box { flex: 1; }
+  .row3 h2 { font-size: 14px; }
+
+  /* ---------- map strip ---------- */
+  .mapstrip { border: 1.5px solid #111; margin-top: 7px; padding: 5px 9px 4px 9px; background: #fff; }
+  .mapstrip .maptitle { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; color: #111; margin-bottom: 2px; }
+  .mapstrip .maptitle span { color: #b91c1c; }
+  .mapstrip svg { display: block; width: 976px; height: 104px; }
+  .maplegend { font-family: Arial, Helvetica, sans-serif; font-size: 9.5px; letter-spacing: 0.6px;
+    color: #444; margin-top: 2px; }
+  .maplegend b { color: #b91c1c; }
+
+  /* ---------- sections ---------- */
+  .sections { margin-top: 7px; display: flex; gap: 8px; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 7px; }
+  .section { border: 1.5px solid #111; background: #fff; }
+  .section > h3 { background: #111; color: #fff; font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px; letter-spacing: 1.5px; padding: 3px 8px; }
+  .section > h3 span { color: #f5c542; }
+  .items { padding: 4px 8px 3px 8px; }
+  .item { margin-bottom: 2px; }
+  .item:last-child { margin-bottom: 0; }
+  .item h4 { font-size: 11.5px; line-height: 1.15; font-weight: 900; }
+  .item p { font-size: 10px; line-height: 1.2; color: #333; }
+
+  .numbers { border: 1.5px solid #111; background: #fff; padding: 5px 8px 6px 8px; }
+  .numbers h3 { font-family: Arial, Helvetica, sans-serif; font-size: 11px; letter-spacing: 1.5px;
+    color: #b91c1c; margin-bottom: 4px; }
+  .numbers div { font-size: 11px; line-height: 1.5; }
+  .numbers b { font-size: 12.5px; }
+
+  /* ---------- footer ---------- */
+  .footer { margin-top: auto; border-top: 2px solid #111; padding-top: 5px; text-align: center; }
+  .footer .f1 { font-size: 11.5px; font-weight: 700; }
+  .footer .f2 { font-family: Arial, Helvetica, sans-serif; font-size: 9px; color: #555; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
     <h1>THE WORLD TODAY</h1>
     <div class="dateline">
-      <span class="tag">ONE DAY &bull; SIX CONTINENTS &bull; 32 STORIES</span>
+      <span>ONE DAY &bull; SIX CONTINENTS &bull; 37 STORIES</span>
       <span class="date">TUESDAY, 17 NOVEMBER 2026</span>
-      <span class="tag">FIRST REPORTED TODAY</span>
+      <span>FIRST REPORTED TODAY</span>
     </div>
   </div>
 
   <div class="lead">
-    <div class="kicker">THE GULF ON FIRE &mdash; U.S. AND IRAN TRADE BLOWS</div>
-    <h2>U.S. JET STRIKES IRAN MISSILE SITE AS IRANIAN DRONES HIT U.S. BASE IN BAHRAIN</h2>
-    <p>An American fighter jet destroyed an Iranian missile site on Qeshm Island after Tehran&rsquo;s Revolutionary Guard launched drones at a U.S. radar station at Sheikh Isa Air Base &mdash; intercepted, with no damage. It is the third attack on U.S. assets in five days, and a fourth tanker caught fire in 24 hours after hitting a naval mine. Qatar says mediation is still going on.</p>
-    <div class="chips"><span>3rd ATTACK IN 5 DAYS</span><span>4th TANKER ABLAZE</span><span>QATAR STILL MEDIATING</span></div>
-  </div>
-
-  <div class="row">
-    <div class="box half">
-      <div class="k">UKRAINE &mdash; WAR</div>
-      <h3>UKRAINE BLOWS UP KERCH BRIDGE &mdash; ROAD SPAN FALLS INTO THE SEA</h3>
-      <p>Overnight strike collapses the bridge&rsquo;s arch; 2 killed, road traffic halted, rail back by afternoon. Kyiv fired a record 1,441 drones at Russia in one day &mdash; and Russia hit two bridges in Kyiv, cutting heat to hundreds of buildings.</p>
-    </div>
-    <div class="box half">
-      <div class="k">MARKETS &mdash; EARNINGS</div>
-      <h3>NVIDIA EARNS $115.8 BILLION &mdash; SALES MORE THAN DOUBLE</h3>
-      <p>Revenue up 103% in the first report since Jensen Huang resigned; interim chief Colette Kress guides to $130 billion next quarter. Data-centre sales alone hit $107.6 billion.</p>
+    <div class="kicker">The Gulf on fire &mdash; U.S. and Iran trade blows</div>
+    <h2>U.S. JETS STRIKE IRAN MISSILE SITE AS IRANIAN DRONES HIT U.S. BASE IN BAHRAIN</h2>
+    <p>American fighter jets destroyed an Iranian missile site on Qeshm Island after Tehran&rsquo;s Revolutionary Guard launched drones at a U.S. radar station at Sheikh Isa Air Base &mdash; intercepted, with no damage. It is the third attack on U.S. assets in five days. Brent crude rose to $92.76.</p>
+    <div class="chips">
+      <span class="chip">3RD ATTACK IN 5 DAYS</span>
+      <span class="chip">4TH TANKER MINED</span>
+      <span class="chip">BRENT $92.76</span>
     </div>
   </div>
 
-  <div class="row">
-    <div class="box third">
-      <div class="k">MANILA &mdash; SUMMIT</div>
-      <h3>TRUMP LANDS IN MANILA AS QUAD MEETS FOR FIRST TIME IN TWO YEARS</h3>
-      <p>Trump, Modi, Takaichi and Albanese meet; 1,500 protest outside. Trump to sign a Thailand trade deal and meet Xi and Putin on Thursday.</p>
+  <div class="row row2">
+    <div class="box">
+      <div class="kicker">Ukraine &mdash; War</div>
+      <h2>UKRAINE BLOWS UP KERCH BRIDGE &mdash; ROAD ARCH FALLS INTO THE SEA</h2>
+      <p>Second strike in two days drops the arch and a road span, blocking the Azov shipping channel; two killed. Rail is back on one track.</p>
     </div>
-    <div class="box third">
-      <div class="k">HOLLYWOOD &mdash; 007</div>
-      <h3>BEZOS: &ldquo;HEAVILY INVOLVED&rdquo; IN PICKING PATTINSON AS BOND</h3>
-      <p>Amazon&rsquo;s Jeff Bezos says he was heavily involved in casting Robert Pattinson as 007 &mdash; a day after the announcement stunned fans.</p>
-    </div>
-    <div class="box third">
-      <div class="k">SYDNEY &mdash; OUTRAGE</div>
-      <h3>MELBOURNE CUP HORSE FOUND DEAD IN A DUMPSTER</h3>
-      <p>So You Are, eighth in the Cup two weeks ago, was put down Monday &mdash; then found in a Sydney waste yard. Racing NSW opens an inquiry.</p>
+    <div class="box">
+      <div class="kicker">Markets &mdash; Earnings</div>
+      <h2>NVIDIA EARNS $115.8 BILLION &mdash; SALES MORE THAN DOUBLE</h2>
+      <p>Revenue up 103% in the first report since Jensen Huang resigned; interim chief Colette Kress guides to $130 billion next quarter.</p>
     </div>
   </div>
 
-  <div class="map">
-    <div class="t">WHERE THE DAY HAPPENED &mdash; 17 NOVEMBER 2026</div>
-    <svg viewBox="0 0 980 52" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="980" height="52" fill="#eef4f8"/>
-      <g fill="#b9c9b3">
-        <ellipse cx="120" cy="24" rx="72" ry="16"/>
-        <ellipse cx="225" cy="40" rx="26" ry="12"/>
-        <ellipse cx="495" cy="14" rx="32" ry="9"/>
-        <ellipse cx="498" cy="38" rx="30" ry="13"/>
-        <ellipse cx="640" cy="24" rx="108" ry="17"/>
-        <ellipse cx="852" cy="42" rx="34" ry="9"/>
+  <div class="row row3">
+    <div class="box">
+      <div class="kicker">Manila &mdash; Summit</div>
+      <h2>TRUMP MEETS QUAD LEADERS IN MANILA FOR FIRST TIME IN TWO YEARS</h2>
+      <p>Trump, Modi, Takaichi and Albanese meet in Manila; joint exercises next year and an AI accelerator.</p>
+    </div>
+    <div class="box">
+      <div class="kicker">Hollywood &mdash; 007</div>
+      <h2>BEZOS: &ldquo;HEAVILY INVOLVED&rdquo; IN PICKING PATTINSON AS BOND</h2>
+      <p>Amazon&rsquo;s Jeff Bezos says he helped cast Robert Pattinson as 007 after screen-testing five finalists.</p>
+    </div>
+    <div class="box">
+      <div class="kicker">Sydney &mdash; Outrage</div>
+      <h2>MELBOURNE CUP HORSE FOUND DEAD IN A WASTE SKIP</h2>
+      <p>So You Are, eighth in the Cup two weeks ago, was put down Monday &mdash; then found in a Sydney waste yard.</p>
+    </div>
+  </div>
+
+  <div class="mapstrip">
+    <div class="maptitle">WHERE THE DAY HAPPENED &mdash; <span>17 NOVEMBER 2026</span> &nbsp;&middot;&nbsp; 1 HORMUZ &middot; 2 KERCH &middot; 3 MANILA &middot; 4 SAN FRANCISCO &middot; 5 SYDNEY &middot; 6 PRAGUE</div>
+    <svg viewBox="0 0 1000 110" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="1000" height="110" fill="#eef0e6"/>
+      <g fill="#c3cfb0" stroke="#7d8f6b" stroke-width="1">
+        <path d="M48,30 L90,14 L150,8 L210,12 L238,30 L228,46 L200,50 L192,64 L168,74 L135,70 L110,58 L72,50 L50,38 Z"/>
+        <path d="M250,10 L272,6 L282,16 L268,24 L252,20 Z"/>
+        <path d="M248,62 L282,58 L302,70 L298,92 L282,106 L264,98 L250,80 Z"/>
+        <path d="M465,24 L505,12 L538,18 L545,30 L528,42 L498,44 L475,36 Z"/>
+        <path d="M480,52 L528,46 L550,60 L546,84 L532,102 L512,108 L500,92 L486,72 Z"/>
+        <path d="M579,20 L648,10 L722,12 L788,20 L802,36 L778,50 L738,46 L718,60 L678,54 L644,64 L606,60 L582,48 L574,34 Z"/>
+        <ellipse cx="700" cy="72" rx="14" ry="6"/>
+        <ellipse cx="732" cy="79" rx="11" ry="5"/>
+        <ellipse cx="760" cy="70" rx="9" ry="4"/>
+        <ellipse cx="815" cy="38" rx="5" ry="10"/>
+        <path d="M800,88 L855,82 L878,92 L868,106 L830,110 L802,100 Z"/>
       </g>
-      <g font-family="Arial" font-size="9" font-weight="bold" fill="#111" text-anchor="middle">
-        <circle cx="712" cy="28" r="8" fill="#b91c1c"/><text x="712" y="31" fill="#fff">1</text><text x="712" y="48">HORMUZ</text>
-        <circle cx="545" cy="16" r="8" fill="#b91c1c"/><text x="545" y="19" fill="#fff">2</text><text x="545" y="48">KERCH</text>
-        <circle cx="798" cy="32" r="8" fill="#b91c1c"/><text x="798" y="35" fill="#fff">3</text><text x="798" y="48">MANILA</text>
-        <circle cx="108" cy="22" r="8" fill="#b91c1c"/><text x="108" y="25" fill="#fff">4</text><text x="108" y="48">NVIDIA</text>
-        <circle cx="468" cy="12" r="8" fill="#b91c1c"/><text x="468" y="15" fill="#fff">5</text><text x="468" y="48">BOND</text>
-        <circle cx="856" cy="40" r="8" fill="#b91c1c"/><text x="856" y="43" fill="#fff">6</text><text x="856" y="12">SYDNEY</text>
+      <g font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#111">
+        <circle cx="133" cy="33" r="9" fill="#b91c1c"/><text x="133" y="37" text-anchor="middle" fill="#fff" font-size="10">4</text>
+        <text x="146" y="30">SAN FRANCISCO</text>
+        <circle cx="511" cy="22" r="9" fill="#b91c1c"/><text x="511" y="26" text-anchor="middle" fill="#fff" font-size="10">6</text>
+        <text x="498" y="19" text-anchor="end">PRAGUE</text>
+        <circle cx="572" cy="26" r="9" fill="#b91c1c"/><text x="572" y="30" text-anchor="middle" fill="#fff" font-size="10">2</text>
+        <text x="585" y="24">KERCH</text>
+        <circle cx="628" cy="42" r="9" fill="#b91c1c"/><text x="628" y="46" text-anchor="middle" fill="#fff" font-size="10">1</text>
+        <text x="641" y="40">HORMUZ</text>
+        <circle cx="808" cy="53" r="9" fill="#b91c1c"/><text x="808" y="57" text-anchor="middle" fill="#fff" font-size="10">3</text>
+        <text x="821" y="50">MANILA</text>
+        <circle cx="892" cy="96" r="9" fill="#b91c1c"/><text x="892" y="100" text-anchor="middle" fill="#fff" font-size="10">5</text>
+        <text x="905" y="93">SYDNEY</text>
       </g>
     </svg>
   </div>
 
-  <div class="grid">
-    <div class="sec">
-      <h4>EUROPE <em>&mdash; 6 STORIES</em></h4>
-      <div class="item"><b>Prague trains collide, 46 hurt</b><span>Two passenger trains crash near the main station on the Day of Struggle for Freedom and Democracy; 4 seriously injured.</span></div>
-      <div class="item"><b>Serbia flips: students end 14-year rule</b><span>Student-backed MPs take 140 of 250 seats as the new assembly convenes, ending Vucic&rsquo;s party&rsquo;s dominance.</span></div>
-      <div class="item"><b>Ex-Kosovo president Thaci gets +17 months</b><span>Hashim Thaci sentenced for obstructing justice, on top of his 25-year war-crimes term.</span></div>
-      <div class="item"><b>French troops &ldquo;secretly in Ukraine&rdquo;</b><span>Report says French soldiers have been deployed for months, training and maintaining kit.</span></div>
-      <div class="item"><b>Finland: talk to Moscow again</b><span>President Stubb urges Europeans to resume direct dialogue with Russia.</span></div>
-      <div class="item"><b>Five EU states plan Rwanda return hub</b><span>Austria, Denmark, Germany, Greece and the Netherlands plan a pilot for about 100 people in 2027.</span></div>
+  <div class="sections">
+    <div class="col">
+      <div class="section">
+        <h3>EUROPE &mdash; <span>6 STORIES</span></h3>
+        <div class="items">
+          <div class="item"><h4>Prague trains collide, 46 hurt</h4><p>Two trains crash near the main station; four badly hurt.</p></div>
+          <div class="item"><h4>Serbia flips: students end 14 years of rule</h4><p>Student List takes 140 of 250 seats as assembly convenes.</p></div>
+          <div class="item"><h4>Ex-Kosovo president Tha&ccedil;i gets +17 months</h4><p>Sentenced for witness tampering, atop a 25-year term.</p></div>
+          <div class="item"><h4>French troops &ldquo;secretly in Ukraine&rdquo;</h4><p>Paris confirms &ldquo;Volia&rdquo;; teams training Kyiv since summer.</p></div>
+          <div class="item"><h4>Finland: talk to Moscow again</h4><p>Stubb urges Europe to speak to Putin directly.</p></div>
+          <div class="item"><h4>COP31 draft splits talks</h4><p>EU envoy calls the draft &ldquo;untenable&rdquo;; $120bn by 2035.</p></div>
+        </div>
+      </div>
+      <div class="section">
+        <h3>MIDDLE EAST &mdash; <span>3 STORIES</span></h3>
+        <div class="items">
+          <div class="item"><h4>Israel: opposition takes the chair</h4><p>Kahana elected speaker 66&ndash;52, ousting Netanyahu&rsquo;s ally.</p></div>
+          <div class="item"><h4>Settler mob kills woman, 72, in Jericho</h4><p>Accounts clash over a car-ramming claim; 10 wounded.</p></div>
+          <div class="item"><h4>UK sanctions eight Israeli firms</h4><p>London targets firms building West Bank settlements.</p></div>
+        </div>
+      </div>
+      <div class="numbers">
+        <h3>BY THE NUMBERS</h3>
+        <div><b>$115.8B</b> &mdash; Nvidia&rsquo;s record quarter</div>
+        <div><b>66&ndash;52</b> &mdash; Kahana wins Knesset speaker</div>
+        <div><b>4.85%</b> &mdash; RBA cash rate after five hikes</div>
+        <div><b>120</b> &mdash; days of regional work for backpackers</div>
+        <div><b>1,600+</b> &mdash; killed by drones in Sudan in 2026</div>
+      </div>
     </div>
-    <div class="sec">
-      <h4>ASIA <em>&mdash; 4 STORIES</em></h4>
-      <div class="item"><b>Japan scrambles jets on Russian planes</b><span>Two suspected Russian aircraft violate Japanese airspace early Tuesday; fighters sent up.</span></div>
-      <div class="item"><b>Cyclone Akvan bears down on India</b><span>Storm strengthens in the Bay of Bengal; landfall in Andhra Pradesh due 20 Nov, winds to 145 km/h.</span></div>
-      <div class="item"><b>Korea cracks down on AI exam cheating</b><span>New measures to stop candidates using AI glasses in the national exams.</span></div>
-      <div class="item"><b>Mongolia&rsquo;s president quits in scandal</b><span>Ukhnaagiin Khurelsukh resigns on Tuesday amid a corruption scandal.</span></div>
+
+    <div class="col">
+      <div class="section">
+        <h3>ASIA &mdash; <span>5 STORIES</span></h3>
+        <div class="items">
+          <div class="item"><h4>Japan scrambles jets on Russian planes</h4><p>Two Russian aircraft enter airspace; first since Sept 2024.</p></div>
+          <div class="item"><h4>Cyclone Akvan bears down on India</h4><p>Landfall due Friday; winds 120&ndash;130 km/h, gusting 145.</p></div>
+          <div class="item"><h4>Korea cracks down on AI exam cheating</h4><p>Glasses checks and a 10-year ban after a confession.</p></div>
+          <div class="item"><h4>Mongolia&rsquo;s president says he will quit</h4><p>Says he will quit over a $25m bribe claim; denies it.</p></div>
+          <div class="item"><h4>Trump signs Thailand trade deal</h4><p>Joint statement with PM Anutin on reciprocal trade.</p></div>
+        </div>
+      </div>
+      <div class="section">
+        <h3>AMERICAS &mdash; <span>5 STORIES</span></h3>
+        <div class="items">
+          <div class="item"><h4>Still no cause for Friday&rsquo;s FAA shutdown</h4><p>Duffy: router failure unexplained; 18,000 flights axed.</p></div>
+          <div class="item"><h4>NSA&rsquo;s classified network goes dark</h4><p>NSANet fails in maintenance; no sign of cyberattack.</p></div>
+          <div class="item"><h4>Chile moves to cut fuel costs</h4><p>Truckers&rsquo; deal passes: diesel down 142 pesos a litre.</p></div>
+          <div class="item"><h4>Catholics fall to 55% in Latin America</h4><p>Down from 80% in 1995; evangelicals lead in three nations.</p></div>
+          <div class="item"><h4>Pope lands in Rome after 12-day tour</h4><p>Leo XIV ends his South America trip in three nations.</p></div>
+        </div>
+      </div>
     </div>
-    <div class="sec">
-      <h4>AFRICA <em>&mdash; 6 STORIES</em></h4>
-      <div class="item"><b>Mozambique: Mondlane on trial</b><span>Opposition leader faces terrorism charges over deadly election protests; trial opens in Maputo.</span></div>
-      <div class="item"><b>Congo Ebola &ldquo;out of control&rdquo;</b><span>Africa CDC: 5,500 dead and 11,200 infected in the DR Congo outbreak.</span></div>
-      <div class="item"><b>Guinea crackdown: 1,263 arrested</b><span>Gold-mining crackdown in Siguiri; 10 killed in clashes after an artisanal mining ban.</span></div>
-      <div class="item"><b>Nigeria inflation eases to 14.06%</b><span>October figure falls as price pressures cool.</span></div>
-      <div class="item"><b>Rwanda genocide trial opens in Paris</b><span>Madjaliwa Safari stands trial over the 1994 genocide.</span></div>
-      <div class="item"><b>Senegal, Cameroon, Morocco reach AFCON</b><span>Three giants qualify for the 2027 Africa Cup of Nations; Nigeria in trouble.</span></div>
-    </div>
-    <div class="sec">
-      <h4>MIDDLE EAST <em>&mdash; 3 STORIES</em></h4>
-      <div class="item"><b>Israel: opposition takes the Speaker&rsquo;s chair</b><span>Eisenkot ally Matan Kahana elected Knesset speaker 66&ndash;52, ousting a Netanyahu ally.</span></div>
-      <div class="item"><b>Settler mob kills woman, 72, in Jericho</b><span>Palestinian woman killed overnight; Israel&rsquo;s attorney general freezes the E1 settlement tender.</span></div>
-      <div class="item"><b>COP31 draft exposes deep divisions</b><span>Ministers arrive in Turkey as the first draft decision splits over finance, energy and 1.5&deg;C.</span></div>
-    </div>
-    <div class="sec">
-      <h4>AMERICAS <em>&mdash; 3 STORIES</em></h4>
-      <div class="item"><b>Still no cause for Friday&rsquo;s FAA shutdown</b><span>Transport chief Duffy says the root cause is unknown; Trump shrugs off the outages.</span></div>
-      <div class="item"><b>NSA&rsquo;s classified network goes dark</b><span>The spy agency&rsquo;s internal network fails, the latest in a string of U.S. system outages.</span></div>
-      <div class="item"><b>Chile moves to cut fuel costs</b><span>Congress approves an initiative to bring down fuel prices for households.</span></div>
-    </div>
-    <div class="sec">
-      <h4>OCEANIA <em>&mdash; 4 STORIES</em></h4>
-      <div class="item"><b>First Aboriginal WA governor</b><span>Ken Wyatt, ex-Indigenous affairs minister, becomes Western Australia&rsquo;s 35th governor.</span></div>
-      <div class="item"><b>Australia tightens working-holiday visas</b><span>120 days of regional work needed for a second year from March 2027, up from 88.</span></div>
-      <div class="item"><b>RBA debated a rate rise</b><span>Minutes show the board weighed a 25-point hike on worsening inflation.</span></div>
-      <div class="item"><b>Gender pay gap below 20% at last</b><span>Australia&rsquo;s gap breaks under a fifth for the first time in history.</span></div>
+
+    <div class="col">
+      <div class="section">
+        <h3>AFRICA &mdash; <span>6 STORIES</span></h3>
+        <div class="items">
+          <div class="item"><h4>Mozambique: Mondlane trial opens</h4><p>Faces terrorism charges over deadly election protests.</p></div>
+          <div class="item"><h4>Rwanda genocide trial opens in Paris</h4><p>Safari, 61, tried over &ldquo;Chez Premier&rdquo; checkpoint killings.</p></div>
+          <div class="item"><h4>AFCON 2027: six teams qualify</h4><p>Senegal, Cameroon, Morocco, Mali, Burkina Faso, Benin.</p></div>
+          <div class="item"><h4>Guinea: 224 sentenced in mining crackdown</h4><p>202 miners and 22 officials sentenced; reported Tuesday.</p></div>
+          <div class="item"><h4>EU states unveil Rwanda return hub</h4><p>Five states plan a pilot for 100 people by 2027.</p></div>
+          <div class="item"><h4>Sudan: drones killed 1,600+ this year</h4><p>UN rights body counts the toll as the war grinds on.</p></div>
+        </div>
+      </div>
+      <div class="section">
+        <h3>OCEANIA &mdash; <span>6 STORIES</span></h3>
+        <div class="items">
+          <div class="item"><h4>Backpacker visas: 120 days of farm work</h4><p>Four months&rsquo; farm work from March; third-year cap 25,000.</p></div>
+          <div class="item"><h4>RBA debated a rate rise</h4><p>Six of nine saw 4.85% as &ldquo;not clearly sufficient&rdquo;.</p></div>
+          <div class="item"><h4>Rio Tinto restarts Tiwai smelter line</h4><p>Line 4 returns at New Zealand&rsquo;s aluminium smelter.</p></div>
+          <div class="item"><h4>Luxon heads to APEC as caretaker PM</h4><p>Flies to Shenzhen before special votes are counted.</p></div>
+          <div class="item"><h4>NZ graduate work visas from 23 Nov</h4><p>New six-month visa confirmed; eligibility widened.</p></div>
+          <div class="item"><h4>Kiwi superconductor returns from space</h4><p>A Kiwi-made superconductor comes home from space.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="foot">
-    <b>All 32 stories on this page happened, or were first reported, on Tuesday 17 November 2026.</b><br>
-    Sources: Reuters, AP, CNN, BBC, Le Monde, Al Jazeera, USA Today, Bloomberg, NPR &mdash; The World Today &bull; 17 November 2026
+  <div class="footer">
+    <div class="f1">All 37 stories on this page happened, or were first reported, on Tuesday 17 November 2026.</div>
+    <div class="f2">Sources: Reuters, AP, CNN, BBC, Le Monde, Al Jazeera, USA Today, Bloomberg, NPR &mdash; The World Today &bull; 17 November 2026</div>
   </div>
 
-</div></body></html>
+</div>
+</body>
+</html>
